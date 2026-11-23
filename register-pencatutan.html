@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Layanan Pengaduan Pencatutan Keanggotaan Parpol - KPU Jawa Tengah</title>
+<style>
+:root{--bg:#fbf5f5;--sf:#fff;--tx:#2a1418;--mu:#6e5559;--ac:#7a1426;--ac2:#8c1d30;--ok:#1b7a3d;--bd:#e8d6d9;--soft:#f7e9eb;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c0f12;--sf:#2a171b;--tx:#f6eaec;--mu:#c9aaaf;--ac:#d0606f;--ac2:#f0a3ae;--ok:#6fd48f;--bd:#4a2a30;--soft:#34191f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1c0f12;--sf:#2a171b;--tx:#f6eaec;--mu:#c9aaaf;--ac:#d0606f;--ac2:#f0a3ae;--ok:#6fd48f;--bd:#4a2a30;--soft:#34191f;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.w{max-width:900px;margin:0 auto;padding:0 16px 40px}
+header{background:#6d1020;color:#fff;padding:22px 16px 18px;margin:0 -16px 20px;border-bottom:4px solid #c9a24b;border-radius:0 0 10px 10px}header a.lk{color:#fff;border-color:#fff}header a.lk:hover{background:rgba(255,255,255,.15)}
+h1{font:700 clamp(1.3rem,4.5vw,1.8rem)/1.2 Georgia,serif;margin:0 0 6px}
+header p{margin:0;color:#f1d9dd}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:8px;padding:16px;margin-bottom:16px}
+h2{font:700 1.1rem Georgia,serif;margin:0 0 12px}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+label{display:block;font-weight:600;font-size:.85rem;margin-bottom:4px}
+input,select,textarea{width:100%;padding:9px 10px;border:1px solid var(--bd);border-radius:6px;background:var(--bg);color:var(--tx);font:inherit}
+textarea{min-height:60px;resize:vertical}
+:focus-visible{outline:3px solid var(--ac2);outline-offset:1px}
+button{font:inherit;font-weight:600;padding:8px 14px;border-radius:6px;border:1px solid var(--ac2);background:var(--ac2);color:#fff;cursor:pointer}
+html:not([data-theme="light"]) button.p{color:#1c0f12}
+button.s{background:transparent;color:var(--ac2)}
+button.d{background:transparent;color:var(--ac);border-color:var(--ac)}
+button.ok{background:var(--ok);border-color:var(--ok)}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:16px}
+.sum div{background:var(--soft);padding:10px 12px;border-left:3px solid var(--ac2)}
+.sum b{display:block;font-size:1.4rem}
+.sum span{font-size:.8rem;color:var(--mu)}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.bar input{flex:2;min-width:160px}.bar select{flex:1;min-width:130px}
+.it{border:1px solid var(--bd);border-radius:8px;padding:14px;margin-bottom:12px;background:var(--sf)}
+.it h3{margin:0;font-size:1rem}
+.meta{color:var(--mu);font-size:.85rem;margin:2px 0 8px;word-break:break-word}
+.pr{display:flex;gap:4px;margin:8px 0}
+.pr i{flex:1;height:8px;border-radius:4px;background:var(--bd)}
+.pr i.on{background:var(--ok)}.pr i.cur{background:var(--ac2)}
+.tg{display:inline-block;font-size:.78rem;font-weight:700;padding:2px 8px;border-radius:99px;background:var(--soft);color:var(--ac2)}
+.tg.r{background:transparent;border:1px solid var(--ac);color:var(--ac)}
+.tg.g2{background:transparent;border:1px solid var(--ok);color:var(--ok)}
+.lg{font-size:.82rem;color:var(--mu);margin:6px 0 0;padding-left:18px}
+.em{text-align:center;color:var(--mu);padding:24px}
+.warn{font-size:.8rem;color:var(--mu);margin-top:8px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}.tabs button.on{background:var(--ac2);color:#fff}
+@media (prefers-color-scheme:dark){.tabs button.on{color:#1c0f12}}
+a.lk{display:inline-block;padding:8px 14px;border:1px solid var(--ac2);border-radius:6px;color:var(--ac2);font-weight:600;text-decoration:none}
+a.lk:hover{background:var(--soft)}
+.nl{font-weight:400;font-size:.8rem;margin-left:6px;color:var(--ac2)}
+.sh{font-size:.95rem;margin:20px 0 8px;color:var(--ac2);border-top:1px solid var(--bd);padding-top:12px}
+.ck{display:flex;gap:8px;align-items:center;font-weight:400;font-size:.9rem}.ck input{width:auto}
+.dt{margin-top:8px;font-size:.85rem}.dt summary{cursor:pointer;color:var(--ac2);font-weight:600}.dt ul{margin:6px 0;padding-left:18px}
+#ov{position:fixed;inset:0;z-index:50;overflow:auto;background:#e6d6d9;padding:env(safe-area-inset-top,0px) 8px env(safe-area-inset-bottom,0px)}
+.tb{display:flex;gap:8px;align-items:center;flex-wrap:wrap;max-width:800px;margin:12px auto}
+#cv{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}#cv[hidden]{display:none}
+.cb{background:var(--sf);border:1px solid var(--bd);border-radius:8px;padding:16px;max-width:420px;width:100%}.cb label{margin-top:10px}
+.tb .warn{color:#2a1418;margin:0}
+.pg{background:#fff;color:#000;font:12pt/1.5 'Times New Roman',Times,serif;max-width:800px;margin:0 auto 24px;padding:32px 40px;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+.pg p{margin:8px 0;text-align:justify}.pg table{border-collapse:collapse;width:100%;margin:8px 0}.pg td,.pg th{padding:4px 8px;vertical-align:top;text-align:left}
+@media print{@page{margin:18mm}.w{display:none!important}#ov{position:static;background:#fff;padding:0;overflow:visible}.tb{display:none}.pg{margin:0;padding:0;box-shadow:none;max-width:none}}
+.logo{display:block;height:54px;width:auto;max-width:100%;background:#fff;padding:6px 12px;border-radius:8px;margin-bottom:14px;border:1px solid var(--bd)}
+#v4{font:16px/1.65 Georgia,"Times New Roman",serif}
+#v4 h2{font:700 1.3rem Georgia,serif;margin:32px 0 16px}
+#v4 a{color:var(--ac2);word-break:break-all}
+#v4 ol.st{list-style:none;margin:0;padding:0;border-left:2px solid var(--bd);margin-left:14px;counter-reset:s}
+#v4 ol.st>li{position:relative;padding:0 0 22px 28px}
+#v4 ol.st>li::before{content:counter(s);counter-increment:s;position:absolute;left:-15px;top:0;width:28px;height:28px;border-radius:50%;background:var(--ac);color:#fff;font:700 .85rem/28px system-ui,sans-serif;text-align:center}
+#v4 details{background:var(--sf);border:1px solid var(--bd);border-radius:6px}
+#v4 summary{cursor:pointer;padding:12px 16px;font-weight:700;display:flex;justify-content:space-between;gap:12px;list-style:none}
+#v4 summary::-webkit-details-marker{display:none}
+#v4 summary small{font:600 .8rem system-ui,sans-serif;color:var(--ac2);white-space:nowrap;padding-top:3px}
+#v4 .bd{padding:0 16px 16px;border-top:1px solid var(--bd)}
+#v4 .bd h3{font-size:.95rem;margin:14px 0 4px;color:var(--ac2);font-family:system-ui,sans-serif}
+#v4 .bd p,#v4 .bd ul,#v4 .bd ol{margin:4px 0;font-size:.95rem}
+#v4 .bd ul,#v4 .bd ol{padding-left:20px}
+#v4 .dec{background:var(--soft);border:1px dashed var(--ac2);padding:10px 14px;margin:8px 0;font-size:.92rem}
+#v4 footer{margin:32px 0 16px;padding-top:16px;border-top:1px solid var(--bd);color:var(--mu);font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="w">
+<header>
+<img id="lg" class="logo" alt="Logo KPU Provinsi Jawa Tengah">
+<h1>Register Pengaduan Pencatutan Keanggotaan Partai Politik</h1>
+<p>KPU Provinsi Jawa Tengah. Catat aduan, lalu perbarui tahapannya satu per satu sesuai SOP.</p>
+<p style="margin-top:12px"><a class="lk" href="https://infopemilu.kpu.go.id/Pemilu/cari_nik" target="_blank" rel="noopener">Cek keanggotaan partai politik di Infopemilu</a></p>
+</header>
+<div class="tabs"><button id="t1" class="on">Register aduan</button><button id="t2" class="s">Penyampaian surat ke partai</button><button id="t3" class="s">Arsip dokumen</button><button id="t4" class="s">Panduan SOP</button></div>
+<div id="v1">
+<div class="sum" id="sum"></div>
+
+<div class="card">
+<h2 id="ft">Catat aduan baru</h2>
+<div class="g">
+<div><label for="nama">Nama pelapor</label><input id="nama" autocomplete="off"></div>
+<div><label for="nik">NIK (16 digit)<a class="nl" href="https://infopemilu.kpu.go.id/Pemilu/cari_nik" target="_blank" rel="noopener">Cek NIK</a></label><input id="nik" inputmode="numeric" maxlength="16" autocomplete="off"></div>
+<div><label for="partai">Partai politik yang mencatut</label><input id="partai" autocomplete="off"></div>
+<div><label for="tgl">Tanggal aduan diterima</label><input id="tgl" type="date"></div>
+<div><label for="sal">Media penyampaian</label><select id="sal"><option>Online (Helpdesk)</option><option>Langsung (offline)</option><option>Media lainnya</option></select></div>
+<div><label for="kp">Kelengkapan</label><select id="kp"><option>Lengkap</option><option>Perlu dilengkapi</option></select></div>
+</div>
+<h3 class="sh">Data pelapor lainnya (Formulir Tanggapan)</h3>
+<div class="g">
+<div><label for="ttl">Tempat/tanggal lahir</label><input id="ttl"></div>
+<div><label for="jk">Jenis kelamin</label><select id="jk"><option value="">-</option><option>Laki-laki</option><option>Perempuan</option></select></div>
+<div><label for="pek">Pekerjaan</label><input id="pek"></div>
+<div><label for="wn">Kewarganegaraan</label><input id="wn" placeholder="WNI"></div>
+<div><label for="tel">No. telp/HP</label><input id="tel" inputmode="tel"></div>
+<div><label for="em">E-mail</label><input id="em" type="email"></div>
+</div>
+<div style="margin-top:12px"><label for="alm">Alamat</label><textarea id="alm"></textarea></div>
+<h3 class="sh">Formulir tanggapan/masukan masyarakat</h3>
+<div class="g">
+<div><label for="fno">Nomor surat</label><input id="fno"></div>
+<div><label for="fsif">Sifat</label><input id="fsif"></div>
+<div><label for="flam">Lampiran</label><input id="flam"></div>
+<div><label for="fper">Perihal</label><input id="fper"></div>
+</div>
+<div style="margin-top:12px"><label for="ura">Uraian tanggapan/masukan</label><textarea id="ura"></textarea></div>
+<div class="g" style="margin-top:12px">
+<div><label for="ba">Bukti a</label><input id="ba"><input type="file" id="fa" accept="image/*,application/pdf" style="margin-top:6px"><div class="warn" id="sa"></div></div>
+<div><label for="bb">Bukti b</label><input id="bb"><input type="file" id="fb" accept="image/*,application/pdf" style="margin-top:6px"><div class="warn" id="sb"></div></div>
+<div><label for="bc">Bukti c</label><input id="bc"><input type="file" id="fc" accept="image/*,application/pdf" style="margin-top:6px"><div class="warn" id="sc"></div></div>
+</div>
+<h3 class="sh">Tanda terima pengaduan</h3>
+<div class="g">
+<div><label for="tno">Nomor tanda terima</label><input id="tno"></div>
+<div><label for="treg">Nomor registrasi pengaduan</label><input id="treg"></div>
+<div><label for="pnm">Nama petugas penerima</label><input id="pnm"></div>
+<div><label for="pnip">NIP petugas</label><input id="pnip"></div>
+</div>
+<div style="margin-top:12px"><label>Dokumen yang diserahkan</label>
+<label class="ck"><input type="checkbox" id="d1">Salinan KTP-el</label>
+<label class="ck"><input type="checkbox" id="d2">Tangkapan layar pengecekan keanggotaan</label>
+<label class="ck"><input type="checkbox" id="d3">Bukti pendukung lainnya</label></div>
+<div style="margin-top:12px"><label for="cat">Catatan</label><textarea id="cat"></textarea></div>
+<div class="row"><button class="p" id="simpan">Simpan aduan</button><button class="s" id="batal" hidden>Batal ubah</button></div>
+<div class="warn" id="err" role="alert"></div>
+</div>
+
+<div class="card">
+<h2>Daftar aduan</h2>
+<div class="bar">
+<input id="q" placeholder="Cari nama, NIK, atau partai" aria-label="Cari">
+<select id="f" aria-label="Filter status"><option value="">Semua status</option><option value="proses">Dalam proses</option><option value="selesai">Selesai</option><option value="dikembalikan">Dikembalikan</option><option value="ditolak">Ditolak</option></select>
+</div>
+<div id="ls"></div>
+<div class="row"><button class="s" id="salin">Salin rekap (teks)</button><button class="d" id="hapusSemua">Hapus semua data</button></div>
+<div class="warn">Data tersimpan di peramban perangkat ini saja dan tidak dikirim ke server. Jangan hapus data situs peramban tanpa menyalin rekap lebih dulu.</div>
+</div>
+</div>
+<div id="v2" hidden>
+<div class="card"><h2 id="sh2">Catat penyampaian surat ke partai politik</h2>
+<div class="g">
+<div><label for="sno">Nomor surat pemberitahuan</label><input id="sno"></div>
+<div><label for="stgl">Tanggal surat dikirim</label><input id="stgl" type="date"></div>
+<div><label for="sparpol">Partai politik tujuan</label><input id="sparpol" list="dlp" autocomplete="off"><datalist id="dlp"></datalist></div>
+<div><label for="stt">Nomor tanda terima dari partai</label><input id="stt"></div>
+<div><label for="sttgl">Tanggal diterima partai</label><input id="sttgl" type="date"></div>
+<div><label for="sjno">Nomor surat jawaban partai</label><input id="sjno"></div>
+<div><label for="sjtgl">Tanggal surat jawaban</label><input id="sjtgl" type="date"></div>
+<div><label for="sjket">Keterangan jawaban/penghapusan</label><input id="sjket"></div>
+</div>
+<div style="margin-top:12px"><label>Aduan yang dilampirkan (aduan dalam proses, sesuai partai tujuan)</label><div id="sl"></div></div>
+<div class="row"><button class="p" id="ssimpan">Simpan surat</button><button class="s" id="sbatal" hidden>Batal ubah</button></div>
+<div class="warn" id="serr" role="alert"></div></div>
+<div class="card"><h2>Daftar surat ke partai</h2><div id="slist"></div>
+<div class="warn">Surat dikirim paling lama 2 hari sejak verifikasi lengkap. Batas jawaban partai 3 hari, dihitung dari tanggal surat diterima partai.</div></div>
+</div>
+<div id="v3" hidden>
+<div class="card"><h2 id="ah2">Catat arsip dokumen aduan</h2>
+<div class="warn" id="asiap" style="margin:0 0 10px"></div>
+<div class="g">
+<div><label for="aaduan">Aduan</label><select id="aaduan"></select></div>
+<div><label for="ano">Nomor arsip/berkas</label><input id="ano"></div>
+<div><label for="atgl">Tanggal diarsipkan</label><input id="atgl" type="date"></div>
+<div><label for="alok">Lokasi penyimpanan</label><input id="alok"></div>
+</div>
+<div style="margin-top:12px"><label>Dokumen yang diarsipkan</label><div id="adk"></div></div>
+<div style="margin-top:12px"><label for="aket">Keterangan</label><input id="aket"></div>
+<div class="row"><button class="p" id="asimpan">Simpan arsip</button><button class="s" id="abatal" hidden>Batal ubah</button></div>
+<div class="warn" id="aerr" role="alert">Jika aduan sudah di tahap 5 selesai, menyimpan arsip otomatis menyelesaikan tahap 6.</div></div>
+<div class="card"><h2>Daftar arsip</h2><div id="alist"></div></div>
+</div>
+<div id="v4" hidden>
+<h2 style="margin-top:0">Panduan SOP</h2><p>Standar operasional dan prosedur pelayanan pengaduan masyarakat terkait pencatutan status keanggotaan partai politik di lingkungan KPU Provinsi Jawa Tengah. Untuk mengisi data aduan, gunakan tab Register aduan.</p>
+
+<h2>Yang perlu kamu siapkan</h2>
+<ul>
+<li>KTP-el</li>
+<li>Tangkapan layar hasil pengecekan NIK di <a href="https://infopemilu.kpu.go.id/Pemilu/Cari_nik" target="_blank" rel="noopener">infopemilu.kpu.go.id/Pemilu/Cari_nik</a></li>
+<li>Bukti pendukung lainnya</li>
+<li>Form Model Tanggapan Masyarakat-Parpol</li>
+</ul>
+
+<h2>Alur pengaduan</h2>
+<ol class="st">
+
+<li><details open><summary>Menerima tanggapan masyarakat <small>30 menit</small></summary><div class="bd">
+<h3>Cara online</h3>
+<p><b>a. Ambil bukti pencatutan</b></p>
+<ol>
+<li>Buka menu tanggapan masyarakat di laman Cari NIK Infopemilu.</li>
+<li>Masukkan NIK, centang captcha, lalu klik “CARI”.</li>
+<li>Hasil pemeriksaan akan muncul.</li>
+<li>Ambil tangkapan layar hasilnya.</li>
+</ol>
+<p><b>b. Isi menu Tanggapan</b></p>
+<ol>
+<li>Klik tombol “TANGGAPAN” di pojok kanan bawah hasil pemeriksaan.</li>
+<li>Masuk ke menu Form tanggapan masyarakat.</li>
+<li>Unduh dan isi Form tanggapan masyarakat.</li>
+<li>Lengkapi isian data yang diminta secara online.</li>
+<li>Unggah bukti pendukung dan form yang sudah diunduh.</li>
+<li>Centang pernyataan dan captcha.</li>
+<li>Klik “Submit”.</li>
+</ol>
+<p><b>c.</b> Form yang terkirim masuk ke aplikasi <a href="https://helpdesk.kpu.go.id/" target="_blank" rel="noopener">helpdesk.kpu.go.id</a> sesuai tingkatan yang dipilih.</p>
+<h3>Cara offline</h3>
+<p>Petugas Helpdesk menerima pengaduan langsung, lalu mencatat dan meregistrasinya di buku register.</p>
+<h3>Keterangan</h3>
+<p>Data dan lampiran bukti diunggah ke Sipol/Infopemilu dan diteruskan ke KPU RI. Jika situs tidak bisa diakses, Petugas Helpdesk menerima aduan langsung, memeriksa kelengkapan dokumen, dan meregistrasinya secara offline.</p>
+</div></details></li>
+
+<li><details><summary>Verifikasi laporan masyarakat <small>30 menit</small></summary><div class="bd">
+<h3>Hasil</h3>
+<ul><li>Form tanggapan yang sudah terverifikasi</li><li>Surat pemberitahuan kepada partai politik</li><li>Tanda terima pengaduan masyarakat</li></ul>
+<h3>Jika tidak lolos</h3>
+<div class="dec">Tidak memenuhi syarat administrasi: permohonan dikembalikan kepada pemohon untuk diperbaiki.</div>
+<div class="dec">Di luar wilayah kerja KPU Provinsi Jawa Tengah: permohonan ditolak.</div>
+</div></details></li>
+
+<li><details><summary>Surat dikirim ke partai politik <small>2 hari</small></summary><div class="bd">
+<p>KPU Provinsi mengirim surat berisi daftar laporan pencatutan nama kepada partai politik untuk dilakukan penghapusan.</p>
+<h3>Keluaran</h3>
+<p>Tanda terima surat pemberitahuan dari KPU Provinsi kepada partai politik.</p>
+<h3>Keterangan</h3>
+<p>Surat disampaikan paling lama 2 hari sejak verifikasi dokumen dinyatakan lengkap.</p>
+</div></details></li>
+
+<li><details><summary>Partai politik menghapus data <small>3 hari</small></summary><div class="bd">
+<p>Partai politik menghapus nama pelapor dari data keanggotaan. Dokumen yang diperlukan: surat jawaban dari partai politik.</p>
+<h3>Dasar aturan</h3>
+<p>Penghapusan dilakukan saat pemutakhiran data dan dokumen partai secara berkelanjutan melalui Sipol, sesuai Lampiran BAB III huruf B angka 3 huruf d Keputusan KPU Nomor 1365 Tahun 2023, sebagaimana diubah terakhir dengan Keputusan KPU Nomor 658 Tahun 2024.</p>
+</div></details></li>
+
+<li><details><summary>Menerima hasil penghapusan <small>2 hari</small></summary><div class="bd">
+<p>Cek kembali NIK-mu di Infopemilu dan simpan tangkapan layar yang menunjukkan sudah terhapus atau belum.</p>
+<div class="dec"><b>Sudah terhapus:</b> lanjut ke pengarsipan.</div>
+<div class="dec"><b>Belum terhapus:</b> laporkan kepada partai politik terkait, sampaikan keberatan, dan minta penghapusan data keanggotaanmu. Lakukan pemeriksaan berkala.</div>
+</div></details></li>
+
+<li><details><summary>Dokumen diarsipkan <small>30 menit</small></summary><div class="bd">
+<p>Dokumen aduan diarsipkan sebagai dokumen arsip.</p>
+</div></details></li>
+</ol>
+
+<footer>Sumber: SOP Pelayanan Pengaduan Masyarakat terkait Pencatutan Status Keanggotaan Partai Politik, KPU Provinsi Jawa Tengah.</footer>
+</div>
+</div>
+
+<div id="cv" hidden><div class="cb"><h2>Catat hasil cek Infopemilu</h2>
+<label for="chasil">Hasil pengecekan</label><select id="chasil"><option>Terdaftar sebagai anggota partai</option><option>Tidak ditemukan / sudah terhapus</option></select>
+<label for="cpartai">Partai yang tampil di hasil</label><input id="cpartai">
+<label for="ctgl">Tanggal pengecekan</label><input id="ctgl" type="date">
+<label class="ck" style="margin-top:12px"><input type="checkbox" id="cscr">Tangkapan layar sudah disimpan</label>
+<label for="ckt">Keterangan</label><input id="ckt">
+<div class="row"><button class="p" id="csave">Simpan hasil</button><button class="s" id="ccancel">Batal</button></div></div></div>
+<div id="ov" hidden><div class="tb"><button class="p" id="pc">Cetak / simpan PDF</button><button class="s" id="pt">Tutup</button><span class="warn">Jika tombol cetak tidak bekerja, gunakan Ctrl+P atau menu cetak peramban.</span></div><div class="pg" id="pg"></div></div>
+<script>
+var LOGO='data:image/png;base64,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';document.getElementById('lg').src=LOGO;
+var T=[["Terima tanggapan",0],["Verifikasi laporan",0],["Kirim surat ke partai",2],["Partai hapus data",3],["Cek hasil penghapusan",2],["Arsipkan dokumen",0]];
+var K="register-pencatutan-v1",D=[],ed=null,F=["ttl","jk","pek","wn","alm","tel","em","fno","fsif","flam","fper","ura","ba","bb","bc","tno","treg","pnm","pnip"];
+function ld(){try{D=JSON.parse(localStorage.getItem(K)||"[]")}catch(e){D=[]}}
+function sv(){try{localStorage.setItem(K,JSON.stringify(D));return true}catch(e){return false}}
+function $(i){return document.getElementById(i)}
+function esc(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML}
+function today(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function fm(s){if(!s)return"-";var p=s.split("-");return new Date(p[0],p[1]-1,p[2]).toLocaleDateString("id-ID",{day:"numeric",month:"short",year:"numeric"})}
+function add(s,n){var p=s.split("-"),d=new Date(p[0],p[1]-1,+p[2]+n);return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function lastDate(a){return a.log.length?a.log[a.log.length-1].t:a.tgl}
+function stat(a){return a.hasil}
+function render(){
+ var q=$("q").value.toLowerCase(),f=$("f").value;
+ var c={all:D.length,proses:0,selesai:0,dikembalikan:0,ditolak:0};
+ D.forEach(function(a){c[a.hasil]++});
+ $("sum").innerHTML=[["Total",c.all],["Dalam proses",c.proses],["Selesai",c.selesai],["Dikembalikan",c.dikembalikan],["Ditolak",c.ditolak]].map(function(x){return"<div><b>"+x[1]+"</b><span>"+x[0]+"</span></div>"}).join("");
+ var L=D.filter(function(a){return(!f||a.hasil===f)&&(!q||(a.nama+a.nik+a.partai).toLowerCase().indexOf(q)>-1)});
+ if(!L.length){$("ls").innerHTML='<div class="em">'+(D.length?"Tidak ada aduan yang cocok.":"Belum ada aduan. Isi formulir di atas lalu klik Simpan aduan.")+"</div>";return}
+ $("ls").innerHTML=L.map(function(a){
+  var i=D.indexOf(a),h="",nx=a.tahap;
+  var bars=T.map(function(_,k){return'<i class="'+(k<a.tahap?"on":(k===a.tahap&&a.hasil==="proses"?"cur":""))+'"></i>'}).join("");
+  var tg=a.hasil==="proses"?'<span class="tg">Tahap '+(nx+1)+": "+T[nx][0]+"</span>":a.hasil==="selesai"?'<span class="tg g2">Selesai</span>':'<span class="tg r">'+(a.hasil==="ditolak"?"Ditolak":"Dikembalikan ke pemohon")+"</span>";
+  var due="";
+  if(a.hasil==="proses"&&T[nx][1]>0){var dd=add(lastDate(a),T[nx][1]);due=' <span class="tg'+(dd<today()?" r":"")+'">Batas '+fm(dd)+(dd<today()?" (lewat)":"")+"</span>"}
+  var act="";
+  if(a.hasil==="proses"){
+   if(nx===1){act='<button class="ok" data-a="lolos" data-i="'+i+'">Memenuhi syarat</button><button class="d" data-a="kembali" data-i="'+i+'">Kembalikan ke pemohon</button><button class="d" data-a="tolak" data-i="'+i+'">Tolak (luar wilayah)</button>'}
+   else if(nx===4){act='<button class="ok" data-a="hapus" data-i="'+i+'">Sudah terhapus</button><button class="d" data-a="belum" data-i="'+i+'">Belum terhapus</button>'}
+   else act='<button class="ok" data-a="next" data-i="'+i+'">Selesaikan tahap '+(nx+1)+"</button>";
+  }
+  if(a.hasil==="dikembalikan")act='<button data-a="lagi" data-i="'+i+'">Pemohon sudah memperbaiki</button>';
+  var lg=a.log.map(function(l){return"<li>"+fm(l.t)+": "+esc(l.n)+"</li>"}).join("");
+  return'<div class="it"><h3>'+esc(a.nama)+"</h3><div class=\"meta\">NIK "+esc(a.nik)+" | "+esc(a.partai)+" | "+esc(a.sal)+" | Diterima "+fm(a.tgl)+" | "+esc(a.kp)+"</div>"+
+  '<div class="pr" aria-hidden="true">'+bars+"</div>"+tg+due+(a.cat?'<div class="meta" style="margin-top:8px">Catatan: '+esc(a.cat)+"</div>":"")+det(a)+
+  (lg?'<ul class="lg">'+lg+"</ul>":"")+'<div class="row">'+act+'<button class="s" data-a="cek" data-i="'+i+'">Cek NIK</button><button class="s" data-a="hc" data-i="'+i+'">Catat hasil cek</button><button class="s" data-a="fdoc" data-i="'+i+'">Formulir tanggapan</button><button class="s" data-a="tdoc" data-i="'+i+'">Tanda terima</button><button class="s" data-a="ubah" data-i="'+i+'">Ubah data</button><button class="d" data-a="del" data-i="'+i+'">Hapus</button></div></div>'
+ }).join("")
+}
+function det(a){
+ var N={ttl:"Tempat/tanggal lahir",jk:"Jenis kelamin",pek:"Pekerjaan",wn:"Kewarganegaraan",alm:"Alamat",tel:"Telp/HP",em:"E-mail",fno:"Nomor surat",fsif:"Sifat",flam:"Lampiran",fper:"Perihal",ura:"Uraian tanggapan",ba:"Bukti a",bb:"Bukti b",bc:"Bukti c",tno:"Nomor tanda terima",treg:"Nomor registrasi",pnm:"Petugas penerima",pnip:"NIP petugas"};
+ var DN=["Salinan KTP-el","Tangkapan layar pengecekan keanggotaan","Bukti pendukung lainnya"];
+ var r=Object.keys(N).filter(function(k){return a[k]}).map(function(k){return"<li><b>"+N[k]+":</b> "+esc(a[k])+"</li>"});
+ (a.cek||[]).forEach(function(c){r.push('<li><b>Cek Infopemilu '+fm(c.t)+':</b> '+esc(c.h)+(c.p?' ('+esc(c.p)+')':'')+(c.s?', tangkapan layar tersimpan':'')+(c.k?', '+esc(c.k):'')+'</li>')});
+ ['ba','bb','bc'].forEach(function(k){var f=(a.bf||{})[k];if(f)r.push('<li><b>Berkas '+k.replace('b','bukti ')+':</b> '+esc(f.n)+(f.t==='img'?'<br><img src="'+f.d+'" style="max-width:160px;border:1px solid #888">':' (PDF)')+'</li>')});
+ if(a.dok&&a.dok.length)r.push("<li><b>Dokumen diserahkan:</b> "+a.dok.map(function(n){return DN[n-1]}).join(", ")+"</li>");
+ return r.length?'<details class="dt"><summary>Rincian formulir dan tanda terima</summary><ul>'+r.join("")+"</ul></details>":""
+}
+function ld2(s){var p=s.split('-');return new Date(p[0],p[1]-1,p[2])}
+function V(s,n){return s?esc(s):new Array(n||14).join('.')}
+function NL(s){return s?esc(s).replace(/\n/g,'<br>'):new Array(80).join('.')}
+function tb(r){return '<table border=1><tr><th>No.</th><th>Uraian</th><th>Keterangan</th></tr>'+r.map(function(x,i){return '<tr><td>'+(i+1)+'.</td><td>'+x[0]+'</td><td>'+x[1]+'</td></tr>'}).join('')+'</table>'}
+function showDoc(a,k){
+ var d=ld2(a.tgl),o=function(x){return d.toLocaleDateString('id-ID',x)},tg=o({day:'numeric',month:'long',year:'numeric'}),h='';
+ if(k==='fdoc'){
+  var R=[['a. Nama',a.nama],['b. Nomor Identitas (KTP/Paspor/SIM)',a.nik],['c. Tempat/Tanggal Lahir',a.ttl],['d. Jenis Kelamin',a.jk],['e. Pekerjaan',a.pek],['f. Kewarganegaraan',a.wn],['g. Alamat',a.alm],['h. No. Telp/HP',a.tel],['i. E-mail',a.em]].map(function(r){return '<tr><td>'+r[0]+'</td><td>: '+V(r[1])+'</td></tr>'}).join('');
+  h='<center><b>MODEL TANGGAPAN.MASYARAKAT-PARPOL</b><br><br><b>FORMULIR TANGGAPAN/MASUKAN MASYARAKAT TERHADAP PENCATUTAN STATUS KEANGGOTAAN PARTAI POLITIK</b></center><p align=right>Semarang, '+tg+'</p>'+
+  '<table><tr><td>Nomor<br>Sifat<br>Lampiran<br>Perihal</td><td>: '+V(a.fno)+'<br>: '+V(a.fsif)+'<br>: '+V(a.flam)+'<br>: '+(a.fper?esc(a.fper):'Tanggapan masyarakat terkait pencatutan status keanggotaan partai politik')+'</td><td>Kepada Yth.<br>Ketua Komisi Pemilihan Umum<br>Provinsi Jawa Tengah<br>di &ndash; Semarang</td></tr></table>'+
+  '<p><b>1. Pelapor</b></p><table>'+R+'</table><p><b>2. Uraian tanggapan/masukan:</b></p><p>'+NL(a.ura)+'</p><p><b>3. Bukti-Bukti:</b></p><p>a. '+V(a.ba,40)+BF(a,'ba')+'<br>b. '+V(a.bb,40)+BF(a,'bb')+'<br>c. '+V(a.bc,40)+BF(a,'bc')+'</p>'+
+  (a.cek&&a.cek.length?'<p>Hasil pengecekan Infopemilu: '+cekText(a)+'</p>':'')+
+  '<p>Demikian laporan ini dibuat dengan sebenarnya, dan apabila ternyata di kemudian hari terbukti tidak benar, saya bersedia menerima konsekuensi hukum sesuai dengan ketentuan peraturan perundang-undangan yang berlaku.</p>'+
+  '<table><tr><td></td><td><center>Pelapor<br><br><br><br><u>'+esc(a.nama)+'</u></center></td></tr></table>'
+ }else{
+  var lg=a.sal.indexOf('Langsung')===0,dn=['Salinan KTP-el','Tangkapan layar pengecekan keanggotaan','Bukti pendukung lainnya'],E=function(x){return x?esc(x):''};
+  h='<center><img src="'+LOGO+'" style="height:64px"><br><b>KOMISI PEMILIHAN UMUM<br>PROVINSI JAWA TENGAH</b><br>Jl. Veteran No. 1 A Semarang<br>E-mail: kpu.jateng@yahoo.com<br>Website: www.kpu-jatengprov.go.id<br>Telp. (024) 8413393, 8312814 Fax (024) 8413391</center><hr>'+
+  '<center><b>TANDA TERIMA<br>PENGADUAN MASYARAKAT<br>TERKAIT PENCATUTAN STATUS KEANGGOTAAN PARTAI POLITIK</b><br>Nomor: '+V(a.tno,30)+'</center>'+
+  '<p>Pada hari ini, '+o({weekday:'long'})+' tanggal '+d.getDate()+' bulan '+o({month:'long'})+' tahun '+d.getFullYear()+', bertempat di Kantor Komisi Pemilihan Umum Provinsi Jawa Tengah, telah diterima pengaduan masyarakat terkait pencatutan status keanggotaan partai politik, dengan rincian sebagai berikut:</p>'+
+  '<p><b>A. IDENTITAS PELAPOR</b></p>'+tb([['Nama lengkap',E(a.nama)],['Nomor identitas (KTP/Paspor/SIM)',E(a.nik)],['Tempat/Tanggal Lahir',E(a.ttl)],['Alamat',E(a.alm)],['Nomor telepon/HP',E(a.tel)],['Alamat e-mail',E(a.em)]])+
+  '<p><b>B. RINCIAN PENGADUAN</b></p>'+tb([['Partai politik yang mencatut nama pelapor',E(a.partai)],['Tanggal pengaduan diterima',tg],['Nomor registrasi pengaduan',E(a.treg)],['Media penyampaian pengaduan',(lg?'&#9746;':'&#9744;')+' Langsung &nbsp; '+(lg?'&#9744;':'&#9746;')+' Media lainnya'+(a.sal.indexOf('Online')===0?' (online/Helpdesk)':'')],['Dokumen yang diserahkan',dn.map(function(n,i){return ((a.dok||[]).indexOf(i+1)>-1?'&#9746; ':'&#9744; ')+n}).join('<br>')],['Hasil pengecekan keanggotaan (Infopemilu)',cekText(a)]])+
+  '<p><b>C. PERNYATAAN PENERIMAAN</b></p><p>Dengan ini, petugas pelayanan Komisi Pemilihan Umum Provinsi Jawa Tengah menyatakan telah menerima pengaduan masyarakat beserta dokumen pendukung sebagaimana tercantum di atas.</p><p align=right>Semarang, '+tg+'</p>'+
+  '<table><tr><td><center>Pelapor,<br><br><br><br>('+esc(a.nama)+')</center></td><td><center>Petugas Penerima,<br><br><br><br>('+(a.pnm?esc(a.pnm):'........................')+')<br>NIP. '+(a.pnip?esc(a.pnip):'........................')+'</center></td></tr></table>'
+ }
+ $('pg').innerHTML=h;$('ov').hidden=false;$('ov').scrollTop=0
+}
+$('pc').onclick=function(){window.print()};$('pt').onclick=function(){$('ov').hidden=true};
+var PF={ba:null,bb:null,bc:null};
+function pfShow(k){var x=k.charAt(1),f=PF[k];$('s'+x).innerHTML=f?'Berkas: '+esc(f.n)+' ('+Math.round(f.d.length*0.75/1024)+' KB) <button class="d" type="button">Hapus berkas</button>':''}
+function pfRead(k,file){
+ if(!file)return;$('err').textContent='';
+ var rd=new FileReader();
+ if(file.type.indexOf('image/')===0){
+  rd.onload=function(){var im=new Image();im.onload=function(){var s=Math.min(1,1000/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext('2d').drawImage(im,0,0,c.width,c.height);PF[k]={n:file.name,t:'img',d:c.toDataURL('image/jpeg',0.72)};pfShow(k)};im.onerror=function(){$('err').textContent='Gambar tidak bisa dibaca.'};im.src=rd.result}
+ }else if(file.type==='application/pdf'){
+  if(file.size>600*1024){$('err').textContent='PDF maksimal 600 KB. Kompres dulu atau unggah sebagai gambar.';return}
+  rd.onload=function(){PF[k]={n:file.name,t:'pdf',d:rd.result};pfShow(k)}
+ }else{$('err').textContent='Hanya gambar atau PDF yang bisa diunggah.';return}
+ rd.readAsDataURL(file)
+}
+['a','b','c'].forEach(function(x){$('f'+x).onchange=function(){pfRead('b'+x,this.files[0])};$('s'+x).onclick=function(e){if(e.target.closest('button')){PF['b'+x]=null;$('f'+x).value='';pfShow('b'+x)}}});
+function BF(a,k){var f=(a.bf||{})[k];if(!f)return '';return f.t==='img'?'<br><img src="'+f.d+'" style="max-width:60%;max-height:240px;border:1px solid #000;margin-top:4px">':'<br>[Lampiran PDF: '+esc(f.n)+']'}
+var ce=null;
+function cekText(a){var c=a.cek||[];if(!c.length)return '';var l=c[c.length-1];return esc(fm(l.t)+': '+l.h+(l.p?' ('+l.p+')':''))}
+function openCek(a){ce=a.id;$('chasil').value='Terdaftar sebagai anggota partai';$('cpartai').value=a.partai;$('ctgl').value=today();$('cscr').checked=false;$('ckt').value='';$('cv').hidden=false}
+$('csave').onclick=function(){D.forEach(function(a){if(a.id===ce){a.cek=a.cek||[];a.cek.push({t:$('ctgl').value||today(),h:$('chasil').value,p:$('cpartai').value.trim(),s:$('cscr').checked,k:$('ckt').value.trim()});log(a,'Cek Infopemilu: '+$('chasil').value)}});sv();$('cv').hidden=true;render()};
+$('ccancel').onclick=function(){$('cv').hidden=true};
+var K2='register-surat-v1',K3='register-arsip-v1',S=[],R=[],es=null,ea=null,AD=['Formulir tanggapan','Tanda terima pengaduan','Surat pemberitahuan ke partai','Surat jawaban partai','Bukti cek akhir Infopemilu','Bukti pendukung lainnya'];
+function lds(){try{S=JSON.parse(localStorage.getItem(K2)||'[]');R=JSON.parse(localStorage.getItem(K3)||'[]')}catch(e){S=[];R=[]}}
+function svx(){try{localStorage.setItem(K2,JSON.stringify(S));localStorage.setItem(K3,JSON.stringify(R));return true}catch(e){return false}}
+function byId(id){return D.filter(function(a){return a.id===id})[0]}
+function chk(id){return [].slice.call($(id).querySelectorAll('input:checked')).map(function(x){return +x.value})}
+function tab(n){[1,2,3,4].forEach(function(i){$('v'+i).hidden=i!==n;$('t'+i).className=i===n?'on':'s'});if(n===1)render();if(n===2)rs();if(n===3)ra()}
+[1,2,3,4].forEach(function(i){$('t'+i).onclick=function(){tab(i)}});
+$('adk').innerHTML=AD.map(function(n,i){return '<label class="ck"><input type="checkbox" value="'+(i+1)+'">'+n+'</label>'}).join('');
+function slist(sel){var p=$('sparpol').value.trim().toLowerCase();var L=D.filter(function(a){return (a.hasil==='proses'&&(!p||a.partai.toLowerCase()===p))||(sel&&sel.indexOf(a.id)>-1)});$('sl').innerHTML=L.length?L.map(function(a){return '<label class="ck"><input type="checkbox" value="'+a.id+'"'+(sel&&sel.indexOf(a.id)>-1?' checked':'')+'>'+esc(a.nama)+' (NIK '+esc(a.nik)+', '+esc(a.partai)+', tahap '+(a.tahap+1)+')</label>'}).join(''):'<div class="warn">Belum ada aduan dalam proses untuk partai ini. Tulis nama partai persis seperti di aduan.</div>'}
+$('sparpol').oninput=function(){slist(chk('sl'))};
+function rs(){var ps={};D.forEach(function(a){ps[a.partai]=1});$('dlp').innerHTML=Object.keys(ps).map(function(p){return '<option value="'+esc(p)+'">'}).join('');slist(chk('sl'));
+ $('slist').innerHTML=S.length?S.map(function(s,i){var st;if(s.jno||s.jtgl)st='<span class="tg g2">Sudah dijawab partai</span>';else if(s.ttgl){var dd=add(s.ttgl,3);st='<span class="tg'+(dd<today()?' r':'')+'">Menunggu jawaban, batas '+fm(dd)+(dd<today()?' (lewat)':'')+'</span>'}else st='<span class="tg">Belum diterima partai</span>';
+  var nm=s.ids.map(byId).filter(Boolean).map(function(a){return esc(a.nama)}).join(', ');
+  return '<div class="it"><h3>Surat '+esc(s.no)+'</h3><div class="meta">Kepada '+esc(s.partai)+' | Dikirim '+fm(s.tgl)+' | '+s.ids.length+' aduan: '+nm+'</div>'+st+(s.tt||s.ttgl?'<div class="meta" style="margin-top:8px">Tanda terima partai: '+esc(s.tt||'-')+', diterima '+fm(s.ttgl)+'</div>':'')+(s.jno||s.jtgl||s.jket?'<div class="meta">Jawaban partai: '+esc(s.jno||'-')+', tanggal '+fm(s.jtgl)+(s.jket?', '+esc(s.jket):'')+'</div>':'')+'<div class="row"><button class="s" data-a="cs" data-i="'+i+'">Cetak draf surat</button><button class="s" data-a="es" data-i="'+i+'">Ubah</button><button class="d" data-a="ds" data-i="'+i+'">Hapus</button></div></div>'}).join(''):'<div class="em">Belum ada surat tercatat.</div>'}
+function sreset(){es=null;['sno','sparpol','stt','sttgl','sjno','sjtgl','sjket'].forEach(function(i){$(i).value=''});$('stgl').value=today();$('sh2').textContent='Catat penyampaian surat ke partai politik';$('sbatal').hidden=true;$('serr').textContent='';$('sl').innerHTML='';rs()}
+$('sbatal').onclick=sreset;
+$('ssimpan').onclick=function(){var no=$('sno').value.trim(),p=$('sparpol').value.trim(),ids=chk('sl');
+ if(!no||!p||!$('stgl').value){$('serr').textContent='Nomor surat, tanggal, dan partai tujuan wajib diisi.';return}
+ if(!ids.length){$('serr').textContent='Pilih minimal satu aduan untuk dilampirkan.';return}
+ var o={no:no,tgl:$('stgl').value,partai:p,ids:ids,tt:$('stt').value.trim(),ttgl:$('sttgl').value,jno:$('sjno').value.trim(),jtgl:$('sjtgl').value,jket:$('sjket').value.trim()};
+ if(es){S.forEach(function(s){if(s.id===es)Object.assign(s,o)})}else{o.id=Date.now();S.unshift(o);ids.forEach(function(id){var a=byId(id);if(a)log(a,'Masuk daftar surat pemberitahuan ke partai, nomor '+no)})}
+ if(!(sv()&&svx())){$('serr').textContent='Penyimpanan penuh, data belum tersimpan.';return}
+ sreset()};
+function sprint(s){var rows=s.ids.map(byId).filter(Boolean).map(function(a,i){return '<tr><td>'+(i+1)+'.</td><td>'+esc(a.nama)+'</td><td>'+esc(a.nik)+'</td><td>'+fm(a.tgl)+'</td></tr>'}).join('');
+ $('pg').innerHTML='<center><img src="'+LOGO+'" style="height:64px"><br><b>KOMISI PEMILIHAN UMUM<br>PROVINSI JAWA TENGAH</b><br>Jl. Veteran No. 1 A Semarang<br>E-mail: kpu.jateng@yahoo.com<br>Website: www.kpu-jatengprov.go.id<br>Telp. (024) 8413393, 8312814 Fax (024) 8413391</center><hr><p align=right>Semarang, '+fm(s.tgl)+'</p><table><tr><td>Nomor<br>Lampiran<br>Perihal</td><td>: '+esc(s.no)+'<br>: 1 (satu) daftar<br>: Pemberitahuan pengaduan masyarakat terkait pencatutan status keanggotaan partai politik</td><td>Kepada Yth.<br>Pimpinan '+esc(s.partai)+'<br>di tempat</td></tr></table>'+
+ '<p>Sehubungan dengan pengaduan masyarakat terkait pencatutan nama sebagai anggota partai politik yang diterima Komisi Pemilihan Umum Provinsi Jawa Tengah, bersama ini kami sampaikan daftar pelapor sebagaimana terlampir untuk dilakukan penghapusan dari data keanggotaan partai politik melalui Sipol, sesuai Keputusan KPU Nomor 1365 Tahun 2023 sebagaimana telah diubah dengan Keputusan KPU Nomor 658 Tahun 2024.</p><p>Demikian disampaikan, atas perhatian dan kerja sama Saudara kami ucapkan terima kasih.</p>'+
+ '<table><tr><td></td><td><center>KETUA KOMISI PEMILIHAN UMUM<br>PROVINSI JAWA TENGAH,<br><br><br><br>........................</center></td></tr></table><p><b>Lampiran: daftar pelapor</b></p><table border=1><tr><th>No.</th><th>Nama pelapor</th><th>NIK</th><th>Tanggal aduan</th></tr>'+rows+'</table>';
+ $('ov').hidden=false;$('ov').scrollTop=0}
+$('slist').onclick=function(e){var b=e.target.closest('button');if(!b)return;var s=S[+b.dataset.i],k=b.dataset.a;
+ if(k==='cs')sprint(s);
+ else if(k==='es'){es=s.id;$('sno').value=s.no;$('stgl').value=s.tgl;$('sparpol').value=s.partai;$('stt').value=s.tt||'';$('sttgl').value=s.ttgl||'';$('sjno').value=s.jno||'';$('sjtgl').value=s.jtgl||'';$('sjket').value=s.jket||'';slist(s.ids);$('sh2').textContent='Ubah data surat';$('sbatal').hidden=false;window.scrollTo({top:0,behavior:'smooth'})}
+ else if(k==='ds'){if(!confirm('Hapus surat ini?'))return;S.splice(+b.dataset.i,1);svx();rs()}};
+function ra(){var sel=$('aaduan').value;$('aaduan').innerHTML=D.length?D.map(function(a){return '<option value="'+a.id+'">'+esc(a.nama)+' ('+(a.hasil==='selesai'?'selesai':'tahap '+(a.tahap+1))+')</option>'}).join(''):'<option value="">Belum ada aduan</option>';if(sel)$('aaduan').value=sel;
+ var n=D.filter(function(a){return a.hasil==='proses'&&a.tahap===5}).length;$('asiap').textContent=n?n+' aduan siap diarsipkan (tahap 5 selesai).':'Belum ada aduan yang siap diarsipkan.';
+ $('alist').innerHTML=R.length?R.map(function(r,i){var a=byId(r.aid);return '<div class="it"><h3>'+(a?esc(a.nama):'(aduan sudah dihapus)')+'</h3><div class="meta">Arsip '+esc(r.no)+' | Diarsipkan '+fm(r.tgl)+(r.lok?' | Lokasi '+esc(r.lok):'')+'</div>'+(r.dok.length?'<div class="meta">Dokumen: '+r.dok.map(function(n){return esc(AD[n-1])}).join(', ')+'</div>':'')+(r.ket?'<div class="meta">'+esc(r.ket)+'</div>':'')+'<div class="row"><button class="s" data-a="ea" data-i="'+i+'">Ubah</button><button class="d" data-a="da" data-i="'+i+'">Hapus</button></div></div>'}).join(''):'<div class="em">Belum ada arsip tercatat.</div>'}
+function areset(){ea=null;['ano','alok','aket'].forEach(function(i){$(i).value=''});$('atgl').value=today();[].slice.call($('adk').querySelectorAll('input')).forEach(function(x){x.checked=false});$('ah2').textContent='Catat arsip dokumen aduan';$('abatal').hidden=true;ra()}
+$('abatal').onclick=areset;
+$('asimpan').onclick=function(){var aid=+$('aaduan').value,no=$('ano').value.trim();
+ if(!aid||!no||!$('atgl').value){$('aerr').textContent='Aduan, nomor arsip, dan tanggal wajib diisi.';return}
+ var o={aid:aid,no:no,tgl:$('atgl').value,lok:$('alok').value.trim(),dok:chk('adk'),ket:$('aket').value.trim()},a=byId(aid);
+ if(ea){R.forEach(function(r){if(r.id===ea)Object.assign(r,o)})}else{o.id=Date.now();R.unshift(o);if(a&&a.hasil==='proses'&&a.tahap===5){a.tahap=6;a.hasil='selesai';log(a,'Tahap 6 selesai: dokumen diarsipkan, nomor '+no)}else if(a)log(a,'Dokumen diarsipkan, nomor '+no)}
+ if(!(sv()&&svx())){$('aerr').textContent='Penyimpanan penuh, data belum tersimpan.';return}
+ areset();$('aerr').textContent='Arsip tersimpan.'};
+$('alist').onclick=function(e){var b=e.target.closest('button');if(!b)return;var r=R[+b.dataset.i],k=b.dataset.a;
+ if(k==='ea'){ea=r.id;$('aaduan').value=r.aid;$('ano').value=r.no;$('atgl').value=r.tgl;$('alok').value=r.lok||'';$('aket').value=r.ket||'';[].slice.call($('adk').querySelectorAll('input')).forEach(function(x){x.checked=r.dok.indexOf(+x.value)>-1});$('ah2').textContent='Ubah data arsip';$('abatal').hidden=false;window.scrollTo({top:0,behavior:'smooth'})}
+ else if(k==='da'){if(!confirm('Hapus catatan arsip ini?'))return;R.splice(+b.dataset.i,1);svx();ra()}};
+function log(a,n){a.log.push({t:today(),n:n})}
+$("ls").addEventListener("click",function(e){
+ var b=e.target.closest("button");if(!b)return;
+ var a=D[+b.dataset.i],k=b.dataset.a;if(!a)return;
+ if(k==="next"){log(a,"Tahap "+(a.tahap+1)+" selesai: "+T[a.tahap][0]);a.tahap++;if(a.tahap===6)a.hasil="selesai"}
+ else if(k==="lolos"){log(a,"Verifikasi: memenuhi syarat");a.tahap=2}
+ else if(k==="kembali"){log(a,"Verifikasi: tidak memenuhi syarat administrasi, dikembalikan ke pemohon");a.hasil="dikembalikan"}
+ else if(k==="tolak"){log(a,"Verifikasi: di luar wilayah kerja KPU Provinsi Jawa Tengah, ditolak");a.hasil="ditolak"}
+ else if(k==="lagi"){log(a,"Pemohon memperbaiki berkas");a.hasil="proses";a.tahap=1}
+ else if(k==="hapus"){log(a,"Hasil cek: NIK sudah terhapus");a.tahap=5}
+ else if(k==="belum"){log(a,"Hasil cek: belum terhapus, keberatan disampaikan ke partai");a.tahap=3}
+ else if(k==="ubah"){ed=a.id;$("nama").value=a.nama;$("nik").value=a.nik;$("partai").value=a.partai;$("tgl").value=a.tgl;$("sal").value=a.sal;$("kp").value=a.kp;$("cat").value=a.cat;F.forEach(function(i){$(i).value=a[i]||""});[1,2,3].forEach(function(n){$("d"+n).checked=(a.dok||[]).indexOf(n)>-1});PF=Object.assign({ba:null,bb:null,bc:null},a.bf||{});["ba","bb","bc"].forEach(pfShow);$("ft").textContent="Ubah data aduan";$("batal").hidden=false;window.scrollTo({top:0,behavior:"smooth"});return}
+ else if(k==="cek"){var pr=navigator.clipboard&&navigator.clipboard.writeText(a.nik);if(pr&&pr.catch)pr.catch(function(){});window.open("https://infopemilu.kpu.go.id/Pemilu/cari_nik","_blank","noopener");b.textContent="NIK tersalin, tempel di Infopemilu";return}
+ else if(k==="hc"){openCek(a);return}
+ else if(k==="fdoc"||k==="tdoc"){showDoc(a,k);return}
+ else if(k==="del"){if(!confirm("Hapus aduan ini?"))return;D.splice(+b.dataset.i,1)}
+ sv();render()
+});
+function reset(){ed=null;["nama","nik","partai","cat"].concat(F).forEach(function(i){$(i).value=""});[1,2,3].forEach(function(n){$("d"+n).checked=false});PF={ba:null,bb:null,bc:null};["ba","bb","bc"].forEach(pfShow);["a","b","c"].forEach(function(x){$("f"+x).value=""});$("tgl").value=today();$("ft").textContent="Catat aduan baru";$("batal").hidden=true;$("err").textContent=""}
+$("batal").onclick=reset;
+$("simpan").onclick=function(){
+ var n=$("nama").value.trim(),k=$("nik").value.trim(),p=$("partai").value.trim();
+ if(!n||!p||!$("tgl").value){$("err").textContent="Nama pelapor, partai, dan tanggal wajib diisi.";return}
+ if(!/^\d{16}$/.test(k)){$("err").textContent="NIK harus berisi 16 digit angka.";return}
+ var o={nama:n,nik:k,partai:p,tgl:$("tgl").value,sal:$("sal").value,kp:$("kp").value,cat:$("cat").value.trim()};F.forEach(function(i){o[i]=$(i).value.trim()});o.dok=[1,2,3].filter(function(n){return $("d"+n).checked});o.bf={ba:PF.ba,bb:PF.bb,bc:PF.bc};
+ if(ed){D.forEach(function(a){if(a.id===ed)Object.assign(a,o)})}
+ else{o.id=Date.now();o.tahap=1;o.hasil="proses";o.log=[{t:o.tgl,n:"Tahap 1 selesai: aduan diterima ("+o.sal+")"}];D.unshift(o)}
+ if(!sv()){$("err").textContent="Penyimpanan penuh, data belum tersimpan. Hapus berkas bukti yang besar atau aduan lama, lalu simpan lagi.";render();return}reset();render()
+};
+$("q").oninput=render;$("f").onchange=render;
+$("salin").onclick=function(){
+ var t=D.map(function(a,i){return(i+1)+". "+a.nama+" | "+a.nik+" | "+a.partai+" | "+fm(a.tgl)+" | "+(a.hasil==="proses"?"Tahap "+(a.tahap+1)+" "+T[a.tahap][0]:a.hasil)}).join("\n");
+ var ok=function(){$("salin").textContent="Tersalin";setTimeout(function(){$("salin").textContent="Salin rekap (teks)"},1500)};
+ try{navigator.clipboard.writeText(t).then(ok)}catch(e){var x=document.createElement("textarea");x.value=t;document.body.appendChild(x);x.select();document.execCommand("copy");x.remove();ok()}
+};
+$("hapusSemua").onclick=function(){if(D.length&&confirm("Hapus SEMUA data aduan? Tindakan ini tidak bisa dibatalkan.")){D=[];sv();render()}};
+ld();lds();$("tgl").value=today();$('stgl').value=today();$('atgl').value=today();render();
+</script>
+</body>
+</html>
